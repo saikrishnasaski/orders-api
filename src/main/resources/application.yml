@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: orders-api
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: orders_db
+      username: ${username}
+      password: ${pwd}
+      authentication-database: orders_db
+
+app:
+  client:
+    payments-service:
+      host: https://example.com
+      paths:
+        health-check: /mock-service/health
+        intiate-payment: /payments
